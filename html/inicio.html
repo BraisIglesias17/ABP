@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Busqueda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <p>Viviendas encontradas en {{neighbourhood}}</p>
+    <div>
+  
+      <fieldset>
+        <table>
+
+        {%for house in recomended%}
+          <tr>
+                <td>Address</td>
+                <td>{{house['street']}}</td>
+          </tr>
+          <tr>
+                <td>Description</td>
+                <td>{{house['description']}}</td>
+          </tr>
+          <tr>
+                <td><img src={{house['street']}}></td>
+          </tr>
+          <tr>
+              <button>Ver</button>
+          </tr>
+          {% endfor %}
+        </table>
+
+      </fieldset>
+    </div>
+
+  
+</body>
+
+
+
+
+</html>
