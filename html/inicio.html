@@ -4,13 +4,43 @@
   <meta charset="utf-8">
   <title>Busqueda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="estilo.css" type="text/css">
+
 </head>
 
 <body>
-  <p>Viviendas encontradas en {{neighbourhood}}</p>
+   <ul>
+      <li><a href="">Home</a></li>
+    </ul>
+
+  <div class="divTitulo">
+    <p class="titulo">Viviendas encontradas en {{nenighbour}}</p>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+        {%for house in recomended%}
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="{{house['picture_url']}}" width="200">
+                    <div class="d-flex flex-column ml-2"><span>{{house['street']}}</span><span class="text-black-50">{{house['price']}}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                </div>
+                <!--<h6>Get more context on your users with stripe data inside our platform.</h6>-->
+                <div class="d-flex justify-content-between install mt-3"><span>{{house['name']}}</span><span class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+
+  </div>
+
+  <!--
+  <div>
     <div>
-  
+      <p>Viviendas encontradas en {{neighbourhood}}</p>
+    </div>
+    <div>
       <fieldset>
         <table>
 
@@ -34,7 +64,7 @@
 
       </fieldset>
     </div>
-
+  </div>-->
   
 </body>
 
