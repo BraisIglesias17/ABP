@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <title>Seleccion</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilo.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilo.css' ) }}">
 </head>
 
 <!-- PARAMETROS DE ENTRADA: UNA VIVIENDA Y UN ARRAY CON LAS VIVIENDAS RECOMENDADAS-->
@@ -20,7 +21,7 @@
       <div>
         <p>Vivienda seleccionada</p>
       </div>
-        <table>
+      <!--<table>
         <tr>
               <td>Address</td>
               <td>{{vivienda['street']}}</td>
@@ -38,7 +39,24 @@
         <tr>
                 <td><img src={{vivienda['picture_url']}} width="100" height="100"></td>
         </tr>
-      </table>
+      </table>-->
+      <div class="container mt-5">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="{{vivienda['picture_url']}}" width="200">
+                    <div class="d-flex flex-column ml-2"><span>{{vivienda['street']}}</span><span class="text-black-50">{{vivienda['price']}}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                </div>
+                <!--<h6>Get more context on your users with stripe data inside our platform.</h6>-->
+                <div class="d-flex justify-content-between install mt-3"><span>{{vivienda['name']}}</span><span class="text-primary"><i class="fa fa-angle-right"></i></span></i></span></div>
+                <div class="d-flex justify-content-between install mt-3"><span>{{vivienda['description']}}</span><span class="text-primary"><i class="fa fa-angle-right"></i></span></i></span></div>
+            </div>
+        </div>
+        
+      </div>    
+
+  </div>
 
       <div>
         <form action="" method="post">
@@ -67,44 +85,24 @@
       </div>
       <div>
         <label>Igual te puede interesar</label>
-  
-    
-        <table>
-
-      
+      </div>
+      <div class="container mt-5">
+    <div class="row">
         {%for house in recomended%}
-        <div>
-        <tr>
-              <td>Address</td>
-              <td>{{house['street']}}</td>
-        </tr>
-       <tr>
-            <td><img src={{house['picture_url']}} width="100" height="100"></td>
-       </tr>
-        <tr>
-              <button>Ver</button>
-        </tr>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex flex-row mb-3"><img src="{{house['picture_url']}}" width="200">
+                    <div class="d-flex flex-column ml-2"><span>{{house['street']}}</span><span class="text-black-50">{{house['price']}}</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                </div>
+                <!--<h6>Get more context on your users with stripe data inside our platform.</h6>-->
+                <div class="d-flex justify-content-between install mt-3"><span>{{house['name']}}</span><span class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
+            </div>
         </div>
         {% endfor %}
-        
-      </table>
+    </div>    
 
-      </div>
   </div>
-      <!--<ul>
-        <li>
-          {{vivienda['street']}}
-        </li>
-        <li>
-          {{vivienda['description']}}
-        </li>
-        <li>
-          {{vivienda['price']}}
-        </li>
-        <li>
-          <img src={{vivienda['picture_url']}} width="100" height="100">
-        </li>
-      </ul>>-->
+      
         
 
             <!-- Formulario simple que enviará una petición POST -->

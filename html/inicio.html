@@ -5,7 +5,10 @@
   <title>Busqueda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="estilo.css" type="text/css">
+  <link rel="stylesheet" href="estilo.css">
+  <!-- PARA QUE VAYA EN FLASK HAY QUE CREAR EN CONTENT UNA CARPETA STATIC
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilo.css' ) }}">
+  -->
 
 </head>
 
@@ -15,7 +18,7 @@
     </ul>
 
   <div class="divTitulo">
-    <p class="titulo">Viviendas encontradas en {{nenighbour}}</p>
+    <p class="titulo">{{neighbour}}</p>
   </div>
 
   <div class="container mt-5">
